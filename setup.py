@@ -31,7 +31,7 @@ setuptools.setup(
     description="Google Cloud Monitoring Metrics Scopes Client Library",
     long_description=readme,
     author="Google LLC",
-    author_email="googleapis-packages@oogle.com",
+    author_email="googleapis-packages@google.com",
     license="Apache 2.0",
     url="https://github.com/googleapis/python-monitoring-metrics-scopes",
     packages=setuptools.PEP420PackageFinder.find(),
