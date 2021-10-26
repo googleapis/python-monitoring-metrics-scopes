@@ -1,7 +1,7 @@
 Python Client for Google Cloud Monitoring Metrics Scope API
 ===========================================================
 
-|GA| |pypi| |versions|
+|beta| |pypi| |versions|
 
 `Google Cloud Monitoring Metrics Scope API`_: Manages your Cloud Monitoring data and configurations. 
 
@@ -9,7 +9,7 @@ Python Client for Google Cloud Monitoring Metrics Scope API
 - `Client Library Documentation`_
 - `Product Documentation`_
 
-.. |GA| image:: https://img.shields.io/badge/support-beta-orange.svg
+.. |beta| image:: https://img.shields.io/badge/support-beta-orange.svg
    :target: https://github.com/googleapis/google-cloud-python/blob/main/README.rst#beta-support
 .. |pypi| image:: https://img.shields.io/pypi/v/google-cloud-monitoring-metrics-scopes.svg
    :target: https://pypi.org/project/google-cloud-monitoring-metrics-scopes/
