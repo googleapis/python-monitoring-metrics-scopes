@@ -19,12 +19,17 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions  # type: ignore
-from google.api_core import exceptions as core_exceptions  # type: ignore
-from google.api_core import gapic_v1  # type: ignore
-from google.api_core import retry as retries  # type: ignore
+from google.api_core.client_options import ClientOptions
+from google.api_core import exceptions as core_exceptions
+from google.api_core import gapic_v1
+from google.api_core import retry as retries
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account  # type: ignore
+
+try:
+    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
+except AttributeError:  # pragma: NO COVER
+    OptionalRetry = Union[retries.Retry, object]  # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -175,17 +180,17 @@ class MetricsScopesAsyncClient:
 
     async def get_metrics_scope(
         self,
-        request: metrics_scopes.GetMetricsScopeRequest = None,
+        request: Union[metrics_scopes.GetMetricsScopeRequest, dict] = None,
         *,
         name: str = None,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> metrics_scope.MetricsScope:
         r"""Returns a specific ``Metrics Scope``.
 
         Args:
-            request (:class:`google.cloud.monitoring_metrics_scope_v1.types.GetMetricsScopeRequest`):
+            request (Union[google.cloud.monitoring_metrics_scope_v1.types.GetMetricsScopeRequest, dict]):
                 The request object. Request for the `GetMetricsScope`
                 method.
             name (:class:`str`):
@@ -250,9 +255,11 @@ class MetricsScopesAsyncClient:
 
     async def list_metrics_scopes_by_monitored_project(
         self,
-        request: metrics_scopes.ListMetricsScopesByMonitoredProjectRequest = None,
+        request: Union[
+            metrics_scopes.ListMetricsScopesByMonitoredProjectRequest, dict
+        ] = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> metrics_scopes.ListMetricsScopesByMonitoredProjectResponse:
@@ -262,7 +269,7 @@ class MetricsScopesAsyncClient:
         first entry in the response.
 
         Args:
-            request (:class:`google.cloud.monitoring_metrics_scope_v1.types.ListMetricsScopesByMonitoredProjectRequest`):
+            request (Union[google.cloud.monitoring_metrics_scope_v1.types.ListMetricsScopesByMonitoredProjectRequest, dict]):
                 The request object. Request for the
                 `ListMetricsScopesByMonitoredProject` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -296,11 +303,11 @@ class MetricsScopesAsyncClient:
 
     async def create_monitored_project(
         self,
-        request: metrics_scopes.CreateMonitoredProjectRequest = None,
+        request: Union[metrics_scopes.CreateMonitoredProjectRequest, dict] = None,
         *,
         parent: str = None,
         monitored_project: metrics_scope.MonitoredProject = None,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
@@ -308,7 +315,7 @@ class MetricsScopesAsyncClient:
         specified ``Metrics Scope``.
 
         Args:
-            request (:class:`google.cloud.monitoring_metrics_scope_v1.types.CreateMonitoredProjectRequest`):
+            request (Union[google.cloud.monitoring_metrics_scope_v1.types.CreateMonitoredProjectRequest, dict]):
                 The request object. Request for the
                 `CreateMonitoredProject` method.
             parent (:class:`str`):
@@ -395,10 +402,10 @@ class MetricsScopesAsyncClient:
 
     async def delete_monitored_project(
         self,
-        request: metrics_scopes.DeleteMonitoredProjectRequest = None,
+        request: Union[metrics_scopes.DeleteMonitoredProjectRequest, dict] = None,
         *,
         name: str = None,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
@@ -406,7 +413,7 @@ class MetricsScopesAsyncClient:
         ``Metrics Scope``.
 
         Args:
-            request (:class:`google.cloud.monitoring_metrics_scope_v1.types.DeleteMonitoredProjectRequest`):
+            request (Union[google.cloud.monitoring_metrics_scope_v1.types.DeleteMonitoredProjectRequest, dict]):
                 The request object. Request for the
                 `DeleteMonitoredProject` method.
             name (:class:`str`):
