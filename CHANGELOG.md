@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/googleapis/python-monitoring-metrics-scopes/compare/v0.1.2...v0.1.3) (2022-06-08)
+
+
+### Bug Fixes
+
+* **deps:** require protobuf<4.0.0 on v0 branch ([#71](https://github.com/googleapis/python-monitoring-metrics-scopes/issues/71)) ([3c1cee7](https://github.com/googleapis/python-monitoring-metrics-scopes/commit/3c1cee765274f06eb4bedaec7bde23037247208e))
+
 ### [0.1.2](https://github.com/googleapis/python-monitoring-metrics-scopes/compare/v0.1.1...v0.1.2) (2022-04-01)
 
 
