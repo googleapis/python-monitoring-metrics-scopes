@@ -1775,7 +1775,6 @@ def test_metrics_scopes_transport_auth_adc(transport_class):
     [
         transports.MetricsScopesGrpcTransport,
         transports.MetricsScopesGrpcAsyncIOTransport,
-        transports.MetricsScopesRestTransport,
     ],
 )
 def test_metrics_scopes_transport_auth_gdch_credentials(transport_class):
