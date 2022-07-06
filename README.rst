@@ -3,7 +3,7 @@ Python Client for Metrics Scopes API API
 
 |stable| |pypi| |versions|
 
-`Metrics Scopes API API`_: 
+`Metrics Scopes API API`_: Manages your Cloud Monitoring data and configurations.
 
 - `Client Library Documentation`_
 - `Product Documentation`_
