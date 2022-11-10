@@ -16,7 +16,18 @@
 from collections import OrderedDict
 import os
 import re
-from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union, cast
+from typing import (
+    Dict,
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    Optional,
+    Sequence,
+    Tuple,
+    Type,
+    Union,
+    cast,
+)
 
 from google.api_core import client_options as client_options_lib
 from google.api_core import exceptions as core_exceptions
@@ -60,7 +71,7 @@ class MetricsScopesClientMeta(type):
 
     def get_transport_class(
         cls,
-        label: str = None,
+        label: Optional[str] = None,
     ) -> Type[MetricsScopesTransport]:
         """Returns an appropriate transport class.
 
@@ -352,7 +363,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
         self,
         *,
         credentials: Optional[ga_credentials.Credentials] = None,
-        transport: Union[str, MetricsScopesTransport, None] = None,
+        transport: Optional[Union[str, MetricsScopesTransport]] = None,
         client_options: Optional[Union[client_options_lib.ClientOptions, dict]] = None,
         client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
@@ -450,11 +461,11 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
 
     def get_metrics_scope(
         self,
-        request: Union[metrics_scopes.GetMetricsScopeRequest, dict] = None,
+        request: Optional[Union[metrics_scopes.GetMetricsScopeRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> metrics_scope.MetricsScope:
         r"""Returns a specific ``Metrics Scope``.
@@ -556,12 +567,12 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
 
     def list_metrics_scopes_by_monitored_project(
         self,
-        request: Union[
-            metrics_scopes.ListMetricsScopesByMonitoredProjectRequest, dict
+        request: Optional[
+            Union[metrics_scopes.ListMetricsScopesByMonitoredProjectRequest, dict]
         ] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> metrics_scopes.ListMetricsScopesByMonitoredProjectResponse:
         r"""Returns a list of every ``Metrics Scope`` that a specific
@@ -640,12 +651,14 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
 
     def create_monitored_project(
         self,
-        request: Union[metrics_scopes.CreateMonitoredProjectRequest, dict] = None,
+        request: Optional[
+            Union[metrics_scopes.CreateMonitoredProjectRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
-        monitored_project: metrics_scope.MonitoredProject = None,
+        parent: Optional[str] = None,
+        monitored_project: Optional[metrics_scope.MonitoredProject] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation.Operation:
         r"""Adds a ``MonitoredProject`` with the given project ID to the
@@ -774,11 +787,13 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
 
     def delete_monitored_project(
         self,
-        request: Union[metrics_scopes.DeleteMonitoredProjectRequest, dict] = None,
+        request: Optional[
+            Union[metrics_scopes.DeleteMonitoredProjectRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation.Operation:
         r"""Deletes a ``MonitoredProject`` from the specified
