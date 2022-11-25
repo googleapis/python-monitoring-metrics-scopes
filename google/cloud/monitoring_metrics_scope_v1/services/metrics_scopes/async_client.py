@@ -689,7 +689,7 @@ class MetricsScopesAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-monitoring-metrics-scope",
+            "google-cloud-monitoring-metrics-scopes",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
